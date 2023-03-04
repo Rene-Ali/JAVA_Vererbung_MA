@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Company {
@@ -18,8 +19,8 @@ public class Company {
         employees.add(employee);
     }
 
-    public void addEmployee(String firstName, String lastName, int insuranceNumber){
-        employees.add(new Employee(firstName, lastName, insuranceNumber));
+    public void addEmployee(String firstName, String lastName, int insuranceNumber, LocalDate dateofBirth, LocalDate dateofFirstDayInCompany){
+        employees.add(new Employee(firstName, lastName, insuranceNumber, dateofBirth, dateofFirstDayInCompany));
     }
 
     public int employeeCount(){
