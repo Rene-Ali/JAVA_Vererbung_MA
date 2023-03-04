@@ -5,7 +5,9 @@ public class Company {
     private ArrayList<Employee> employees;
 
     public Company(String name) {
+
         this.name = name;
+        employees = new ArrayList<>();
     }
 
     public String getName() {

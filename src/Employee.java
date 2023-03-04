@@ -1,18 +1,20 @@
+import java.lang.String;
+
 public class Employee {
     private String firstName;
     private String lastName;
     private char gender;
     private int insuranceNumber;
-    private LocalDate dateofBirth;
-    private LocalDate dateofFirstDayIncompany;
+   // private LocalDate dateofBirth;
+    //private LocalDate dateofFirstDayIncompany;
 
-    public Employee(String firstName, String lastName, char gender, int insuranceNumber, LocalDate dateofBirth, LocalDate dateofFirstDayIncompany) {
+    public Employee(String firstName, String lastName, int insuranceNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
-        setGender(Gender);
+        setGender(gender);
         setInsuranceNumber(insuranceNumber);
-        this.dateofBirth = dateofBirth;
-        this.dateofFirstDayIncompany = dateofFirstDayIncompany;
+      //  this.dateofBirth = dateofBirth;
+       // this.dateofFirstDayIncompany = dateofFirstDayIncompany;
     }
 
     public String getFirstName() {
@@ -36,38 +38,50 @@ public class Employee {
     }
 
     public void setGender(char gender) {
-        if (gender == 'm' || gender == 'w' || gender = 'd'){
-            this.gender = gender;
-        } else {
+        if (!(gender == 'm' || gender == 'w' || gender == 'd')) {
             this.gender = '-';
+        } else {
+            this.gender = gender;
         }
     }
 
-    public int getInsuranceNumber() {
-        return insuranceNumber;
-    }
 
     public void setInsuranceNumber(int insuranceNumber) {
-        if (insuranceNumber.length() <1000 || insuranceNumber.length() > 9999){
+        if (insuranceNumber< 1000 || insuranceNumber > 9999) {
             System.out.println("InsuranceNumber" + insuranceNumber + "nicht gültig. Die InsuranceNumber muss größer 1000 & kleiner 9999 sein.");
-            this.insuranceNumber = "Ungültig";
+        } else {
+            this.insuranceNumber = insuranceNumber;
         }
-        else {this.insuranceNumber = insuranceNumber;
     }
 
-    public LocalDate getDateofBirth() {
-        return dateofBirth;
+    public void print(){
+        System.out.println(this);
     }
 
-    public void setDateofBirth(LocalDate dateofBirth) {
-        this.dateofBirth = dateofBirth;
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", gender=" + gender +
+                ", insuranceNumber=" + insuranceNumber +
+                '}';
     }
+//public LocalDate getDateofBirth() {
+        //return dateofBirth;
+   // }
 
-    public LocalDate getDateofFirstDayIncompany() {
-        return dateofFirstDayIncompany;
-    }
+   // public void setDateofBirth(LocalDate dateofBirth) {
+     //   this.dateofBirth = dateofBirth;
+  //  }
 
-    public void setDateofFirstDayIncompany(LocalDate dateofFirstDayIncompany) {
-        this.dateofFirstDayIncompany = dateofFirstDayIncompany;
-    }
+    //public LocalDate getDateofFirstDayIncompany() {
+    //    return dateofFirstDayIncompany;
+   // }
+
+   // public void setDateofFirstDayIncompany(LocalDate dateofFirstDayIncompany) {
+    //    this.dateofFirstDayIncompany = dateofFirstDayIncompany;
+    //}
 }
+
+
