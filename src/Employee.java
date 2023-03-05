@@ -104,8 +104,7 @@ public class Employee {
         return p1.getYears();
     }
     public float calculateMonthlySalary(){
-
-
+        return 1000;
     }
 
 }
