@@ -48,7 +48,7 @@ public class Main {
 
         company1.printEmployees();
 
-        Internal i1 = new Internal("Ali", "G", 2500, LocalDate.of(1985, 8, 30), LocalDate.of(2000, 7, 25));
+        Internal i1 = new Internal("Ali", "Gustav", 2500, LocalDate.of(1985, 8, 30), LocalDate.of(2000, 7, 25));
 
         company1.addEmployee(i1);
         company1.countInternals();
@@ -57,7 +57,17 @@ public class Main {
         company1.calculateSalarySum();
         System.out.println(company1.calculateSalarySum());
 
+        company1.countEmployeesOlderThan(25);
+        System.out.println(company1.countEmployeesOlderThan(40));
 
+        company1.calculateAvgSalary();
+        System.out.println(company1.calculateAvgSalary());
+
+        Manager m1 = new Manager("Gustav", "Dackelmann", 4000, LocalDate.of(1985, 8, 30), LocalDate.of(2000, 7, 25), 20000);
+        company1.addEmployee(m1);
+
+        company1.topEarner();
+        System.out.println(company1.topEarner());
 
 
 

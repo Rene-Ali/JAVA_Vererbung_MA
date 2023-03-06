@@ -89,6 +89,37 @@ public class Company {
             summeAllerGehälter+=employee.calculateMonthlySalary();
         }
         return summeAllerGehälter;
-
     }
+    public int countEmployeesOlderThan(int age){
+        int anzahlMA = 0;
+        for (Employee employee:employees){
+            if (employee.getAge() > age){
+                anzahlMA++;
+            }
+        }
+        return anzahlMA;
+    }
+
+    public double calculateAvgSalary(){
+        double summeAllerGehälter = 0;
+        for(Employee employee:employees){
+            summeAllerGehälter+=employee.calculateMonthlySalary();
+        }
+        return summeAllerGehälter/employeeCount();
+    }
+
+    public String topEarner(){
+        String topEarnerName = "";
+        double maxSalary = 0;
+        for(Employee employee:employees){
+            if(employee.calculateMonthlySalary() > maxSalary){
+                maxSalary = employee.calculateMonthlySalary();
+                topEarnerName = employee.getLastName();
+            }
+        }
+        return "The employee "+ topEarnerName;
+    }
+
+    // ab Top Earner Gehalt bis increase manager Salary
+
 }
